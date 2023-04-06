@@ -4,17 +4,11 @@
 
 class Bishop : virtual public BasicPiece {
 public:
+    /* Constructor */
     Bishop(PieceColor color, Location location) noexcept
         : BasicPiece(color, location) {}
-
-    /* */
-    bool isValidMove(Location newLocation) const noexcept override;
-
+    /* Destructor */
+    ~Bishop() override = default;
     /* Access */
-
-    /* Mutators */
-
-
-private:
-
+    bool isValidMove(Location newLocation) const noexcept override;
 };

@@ -6,23 +6,31 @@
 
 class Board {
 public:
+    /* Constructor */
     Board(const string& initBoard);
+
+    /* Destructor */
     ~Board();
+
+    /* Accessors */
+    int makeMove(const string& source, const string& destination);
+
+private:
+    /* Private methods */
     bool isValidSource(int srcIndex);
     bool isValidDestination(int srcIndex, int destIndex);
     bool isValidMove(int srcIndex, const Location& dest);
     void removePiece(const int& destIndex);
-    bool isKingInCheckAfterMove();
+    bool isKingInCheckAfterMove(const Location& dest);
     bool isPathClean(int srcIndex, const Location& src, const Location& dest);
-    int makeMove(const string& source, const string& destination);
+
     int findPieceAtLocation(const Location& location);
-    //return
 
     void toggleTurn();
-private:
+
+    /* Private members */
     vector<unique_ptr<BasicPiece>> m_board;
     PieceColor m_turn;
-
 };
 
 

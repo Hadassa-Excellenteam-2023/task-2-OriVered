@@ -1,6 +1,14 @@
 #include "Pieces\Knight.h"
 
 
+/* Determines if a move is valid for a Knight piece based on the given new location.
+This function checks if the move is a L-shaped pattern (two steps in one direction and one step in another)
+and within the board limits.
+
+Parameters:
+    newLocation: A Location object representing the destination of the move.
+Returns:
+    true if the move is valid for a Knight piece, false otherwise.*/
 bool Knight::isValidMove(Location newLocation) const noexcept
 {
     int rowDiff = newLocation.first[0] - m_location.first[0];

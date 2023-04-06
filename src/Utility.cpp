@@ -1,5 +1,14 @@
 #include "Utility.h"
 
+/* Converts an integer number to a corresponding Location object.
+ This function is useful for creating a Location object based on
+ the position of a character in a string representing the initial board state.
+
+ Parameters:
+ - num: An integer representing the position of a character in the initial board string.
+
+ Returns:
+ - A Location object corresponding to the given number.*/
 Location convertToLocation(int num) {
     // Convert number to file (column) and rank (row)
     int file = (num) / 8 + 1;  // Columns go from 1 (a) to 8 (h)
@@ -21,6 +30,13 @@ Location convertToLocation(int num) {
     return make_pair(fileString, rank);
 }
 
+/* Converts a string representation of a location(e.g., "A1") to a corresponding Location object.
+
+ Parameters:
+ - locationStr: A string representing a location on the board (e.g., "A1").
+
+ Returns:
+ - A Location object corresponding to the given string.*/
 Location convertToLocationFromStr(const std::string& locationStr) {
     int file = locationStr[0] - 'a';  // Columns go from 1 (a) to 8 (h)
     int rank = locationStr[1] - '0';      // Rows go from 1 to 8
@@ -28,6 +44,17 @@ Location convertToLocationFromStr(const std::string& locationStr) {
 
     return convertToLocation(num);
 }
+
+/* Calculates the path between two locations on the board.
+ This function generates a vector of intermediate locations between
+ the source and destination locations, excluding the source and destination.
+
+ Parameters:
+ - src: The source location as a Location object.
+ - dest: The destination location as a Location object.
+
+ Returns:
+ - A vector of intermediate Location objects between the source and destination.*/
 
 std::vector<Location> getPath(const Location& src, const Location& dest) {
     std::vector<Location> path;

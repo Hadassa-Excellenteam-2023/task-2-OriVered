@@ -10,18 +10,17 @@ enum class PieceColor {
 
 class BasicPiece {
 public:
+    /* Constructor */
     BasicPiece(PieceColor color, Location location) noexcept
         : m_color(color), m_location(location) {}
 
-    /*  */
-    virtual bool isValidMove(Location newLocation) const { return false; };
+    /* Destructor */
+    virtual ~BasicPiece() = default;
 
-    /* Access */
+    /* Accessors */
+    virtual bool isValidMove(Location newLocation) const { return false; };
     PieceColor get_color() const noexcept;
     Location get_location() const noexcept;
-
-    string get_x() const noexcept;
-    int get_y() const noexcept;
 
     /* Mutators */
     void set_location(Location location) noexcept;

@@ -30,13 +30,13 @@ int main()
 		{ // put your code here instead that code
 			//cout << "code response >> ";
 			//cin >> codeResponse;
-
+			std::string src = res.substr(0, 2);
+			std::string dest = res.substr(2, 2);
+			codeResponse = b.makeMove(src, dest);
 		}
 		/**/
 
-		std::string src = res.substr(0, 2);
-		std::string dest = res.substr(2, 2);
-		codeResponse = b.makeMove(src, dest);
+
 		a.setCodeResponse(codeResponse);
 		res = a.getInput(); 
 	}

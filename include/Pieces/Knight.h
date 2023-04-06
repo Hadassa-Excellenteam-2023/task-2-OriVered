@@ -4,17 +4,10 @@
 
 class Knight : public BasicPiece {
 public:
+    /* Constructor */
     Knight(PieceColor color, Location location) noexcept
         : BasicPiece(color, location) {}
 
-    /* */
+    /* Accsseors */
     bool isValidMove(Location newLocation) const noexcept override;
-
-    /* Access */
-
-    /* Mutators */
-
-
-private:
-
 };

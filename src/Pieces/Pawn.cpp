@@ -1,5 +1,13 @@
 #include "Pieces\Pawn.h"
 
+/* Determines if a move is valid for a Pawn piece based on the given new location.
+This function checks if the move is a valid initial move (two steps forward) or a regular pawn move (one step forward)
+and within the board limits.
+
+Parameters:
+    newLocation: A Location object representing the destination of the move.
+Returns:
+    true if the move is valid for a Pawn piece, false otherwise.*/
 bool Pawn::isValidMove(Location newLocation) const noexcept
 {
     int rowDiff = (m_color == PieceColor::WHITE) ? newLocation.first[0] - m_location.first[0]

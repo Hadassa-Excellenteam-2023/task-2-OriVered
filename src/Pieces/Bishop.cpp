@@ -1,5 +1,13 @@
 #include "Pieces\Bishop.h"
 
+/* Determines if a move is valid for a Bishop piece based on the given new location.
+ This function checks if the move is along a diagonal direction and within the board limits.
+
+ Parameters:
+ - newLocation: A Location object representing the destination of the move.
+
+ Returns:
+ - true if the move is valid for a Bishop piece, false otherwise.*/
 bool Bishop::isValidMove(Location newLocation) const noexcept
 {
     int rowDiff = newLocation.first[0] - m_location.first[0];
