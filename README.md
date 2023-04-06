@@ -1,7 +1,9 @@
 #README for Chess Game#
+
 -This is a command line chess game. The game uses ASCII art for the board and pieces.
 
-##Getting Started
+##Getting Started##
+
 -To run the game, follow these steps:
 
 Clone the repository to your local machine
@@ -20,6 +22,7 @@ The game is played through the terminal and uses ASCII art to represent the boar
 To make a move, enter the source and destination squares (e.g., "A2A4"). The game will return the result of the move and update the board accordingly. The game continues until one player resigns or the game ends in a draw.
 
 ##Implementation Details##
+
 ###The game is implemented in C++ and uses the following files:###
 
 -Board.h: Contains the Board class, which represents the chess board and manages the pieces and moves.
